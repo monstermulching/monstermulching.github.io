@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monster Mulching</title>
-  <meta name="description" content="Monster Mulching — Specialists in Skid Site Waste Wood, Greenwaste and Landscape Supplies in the Lower North Island." />
+  <title>Privacy - Monster Mulching</title>
+  <meta name="description" content="Privacy policy for Monster Mulching website." />
   <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
   <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
@@ -250,38 +250,35 @@
     form {
       display: grid;
       gap: 1rem;
+      margin-top: 1rem;
     }
 
     label {
-      display: grid;
-      gap: 0.45rem;
-      font-weight: 600;
-      font-size: 0.95rem;
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
     }
 
     input, textarea {
       width: 100%;
-      padding: 0.95rem 1rem;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.05);
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
       color: var(--text);
-      font: inherit;
+      font-family: inherit;
+      font-size: 1rem;
     }
 
-    input::placeholder, textarea::placeholder {
-      color: #94a3b8;
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(57,255,20,0.1);
     }
 
     textarea {
-      min-height: 160px;
       resize: vertical;
-    }
-
-    .fine-print {
-      color: #94a3b8;
-      font-size: 0.88rem;
-      margin: 0;
+      min-height: 120px;
     }
 
     footer {
@@ -303,31 +300,32 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid,
-      .grid-3,
-      .about,
-      .contact-wrap {
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links {
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        max-width: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .about {
+        grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 3.5rem;
-      }
-
-      .nav-logo {
-        height: 48px;
+      .contact-wrap {
+        grid-template-columns: 1fr;
       }
 
       footer .container {
@@ -340,124 +338,27 @@
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <a href="#top" class="brand">
+      <a href="index.html" class="brand">
         <img src="images/logo.png" alt="Monster Mulching logo" class="nav-logo" />
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact" class="btn btn-secondary">Get in touch</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Lower North Island • Greenwaste • Landscape Supplies</div>
-          <h1>Mulching, Greenwaste & Landscape Supplies</h1>
-          <p class="lead">
-            Specialists in skid site waste wood, greenwaste and landscape supplies across the Lower North Island.
-            We deliver practical, dependable solutions for site clean-up, timber waste handling, and bulk landscape material supply.
-          </p>
-        </div>
-
-        <aside class="hero-card" aria-label="Highlights">
-          <h3>Why choose Monster Mulching</h3>
-          <ul>
-            <li>Specialists in skid site waste wood and greenwaste processing.</li>
-            <li>Reliable service for contractors, landowners, and commercial jobs.</li>
-            <li>Modern equipment, practical advice, and straightforward communication.</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section id="services">
       <div class="container">
-        <div class="section-head">
-          <h2>Services</h2>
-          <p>We help keep sites tidy, manageable, and moving with practical mulching, waste handling, and landscape supply services.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card">
-            <h3>Site Waste Wood</h3>
-            <p>Efficient handling and processing of skid site waste wood to help keep forestry and work sites cleaner, safer, and easier to manage.</p>
-          </article>
-          <article class="card">
-            <h3>Greenwaste Mulching</h3>
-            <p>Greenwaste reduction and mulching services for properties, worksites, and larger clean-up jobs across the Lower North Island.</p>
-          </article>
-          <article class="card">
-            <h3>Landscape Supplies</h3>
-            <p>Bulk landscape products and supply solutions with a focus on practical service, dependable turnaround, and quality material.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container about">
-        <div class="card">
-          <h2>About</h2>
-          <p>
-            Monster Mulching provides specialist mulching, greenwaste, and landscape supply services across the Lower North Island.
-            We focus on practical outcomes, efficient turnaround, and dependable service for a wide range of site and property needs.
-          </p>
-        </div>
-        <div class="card">
-          <h2>Why customers call us</h2>
-          <p>
-            We keep things simple: clear communication, reliable equipment, and work that helps customers move forward.
-            Whether it is site waste wood, greenwaste, or landscape products, we aim to make the job easier from start to finish.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container contact-wrap">
-        <div class="card">
-          <h2>Contact us</h2>
-          <p class="lead">Use the form or contact us directly.</p>
-          <div class="contact-list">
-            <div class="contact-item"><strong>Email:</strong> <a href="mailto:hello@monstermulching.nz">hello@monstermulching.nz</a></div>
-            <!-- <div class="contact-item"><strong>Phone:</strong> <a href="tel:+64XXXXXXXX">0XX XX XXXX</a></div> -->
-            <div class="contact-item"><strong>Location:</strong> Lower North Island, New Zealand</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="233d1700-b177-427b-a36d-2d86bac5f9e0" />
-            <input type="hidden" name="subject" value="Monster Mulching Website Enquiry" />
-            <input type="hidden" name="from_name" value="Monster Mulching Website" />
-            <input type="hidden" name="redirect" value="https://monstermulching.nz/thank-you.html">
-
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" required />
-            </label>
-
-            <label>
-              Email
-              <input type="email" name="email" placeholder="you@example.com" required />
-            </label>
-
-            <label>
-              Phone
-              <input type="tel" name="phone" placeholder="your phone number" required />
-            </label>
-
-            <label>
-              Message
-              <textarea name="message" placeholder="How can we help?" required></textarea>
-            </label>
-
-            <input type="checkbox" name="botcheck" style="display:none" />
-            <button type="submit" class="btn btn-primary">Send message</button>
-          </form>
+        <h1>Privacy</h1>
+        <div class="card" style="max-width: 65ch; margin: 2rem auto;">
+          <p>We respect your privacy and handle personal information in accordance with the Privacy Act 2020 (New Zealand).</p>
+          <p>If you contact us through this website, we may collect personal information such as your name, email address, phone number, and the contents of your message. We use this information only to respond to your enquiry or provide our services.</p>
+          <p>This website may also collect anonymous usage information (such as pages visited and general location) through analytics tools to help us understand how the website is used and improve it.</p>
+          <p>We do not sell or share personal information with third parties for marketing purposes.</p>
+          <p>You have the right to request access to or correction of any personal information we hold about you. If you have any questions about this privacy statement, please contact us.</p>
         </div>
       </div>
     </section>
