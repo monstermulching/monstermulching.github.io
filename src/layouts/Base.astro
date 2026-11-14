@@ -22,6 +22,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: business.name,
+  legalName: business.legalName,
+  identifier: { '@type': 'PropertyValue', propertyID: 'NZBN', value: business.nzbn },
   description,
   url: new URL('/', Astro.site).href,
   telephone: business.phoneE164,

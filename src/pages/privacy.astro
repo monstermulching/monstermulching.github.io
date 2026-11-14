@@ -1,12 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageIntro from '../components/PageIntro.astro';
+import { business } from '../data/business';
 ---
 <Base title="Privacy - Monster Mulching" description="Privacy policy for Monster Mulching website.">
   <PageIntro kicker="Monster Mulching" title="Privacy" />
   <section class="section pt-10">
     <div class="wrap prose-mm max-w-[68ch] text-lg">
-      <p>We respect your privacy and handle personal information in accordance with the Privacy Act 2020 (New Zealand).</p>
+      <p>{business.legalName} (NZBN {business.nzbn}, “we”, “us”) operates this website. We respect your privacy and handle personal information in accordance with the Privacy Act 2020 (New Zealand).</p>
       <p>If you contact us through this website, we may collect personal information such as your name, email address, phone number, and the contents of your message. We use this information only to respond to your enquiry or provide our services.</p>
       <p>This website may also collect anonymous usage information (such as pages visited and general location) through analytics tools to help us understand how the website is used and improve it.</p>
       <p>We do not sell or share personal information with third parties for marketing purposes.</p>
