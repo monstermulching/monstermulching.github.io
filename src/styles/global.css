@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+@import '@fontsource/barlow/400.css';
+@import '@fontsource/barlow/500.css';
+@import '@fontsource/barlow/600.css';
+@import '@fontsource/barlow-condensed/600.css';
+@import '@fontsource/barlow-condensed/800.css';
+
+@theme {
+  --font-sans: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', ui-sans-serif, sans-serif;
+
+  --color-night: #0c110b;
+  --color-bark: #141b12;
+  --color-bark-2: #1c2519;
+  --color-line: #2a3526;
+  --color-bone: #eef1e6;
+  --color-moss: #a9b4a0;
+  --color-slime: #7fe04a;
+  --color-slime-dark: #5cb82c;
+  --color-amber: #f2b531;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-night text-bone font-sans text-[17px] leading-relaxed antialiased; }
+  h1, h2, h3 { @apply font-display font-extrabold uppercase leading-[0.95] tracking-[0.01em] text-bone; }
+  h1 { @apply text-5xl sm:text-6xl lg:text-[5.5rem]; }
+  h2 { @apply text-4xl sm:text-5xl; }
+  h3 { @apply text-2xl sm:text-[1.7rem]; }
+  ::selection { @apply bg-slime text-night; }
+  :focus-visible { @apply outline-3 outline-offset-2 outline-slime; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[1180px] px-4 sm:px-6; }
+  .section { @apply py-16 sm:py-24; }
+  .kicker { @apply font-display text-base font-semibold uppercase tracking-[0.18em] text-slime; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border-2 border-transparent px-6 py-3
+      font-display text-lg font-semibold uppercase tracking-[0.08em] no-underline transition-colors;
+  }
+  .btn-primary { @apply bg-slime text-night hover:bg-bone; }
+  .btn-ghost { @apply border-bone/40 text-bone hover:border-slime hover:text-slime; }
+  .field { @apply grid gap-1.5 text-sm font-semibold uppercase tracking-[0.08em] text-moss; }
+  .field input, .field textarea {
+    @apply w-full rounded-md border border-line bg-night px-4 py-3 text-base font-normal normal-case tracking-normal text-bone
+      placeholder:text-moss/60 transition-colors focus:border-slime focus:outline-none;
+  }
+  .prose-mm p { @apply mt-4 text-moss; }
+}
+
+/* Slime drips along the bottom edge of the green band (echoes the logo lettering). */
+.drips {
+  height: 30px;
+  margin-top: -1px;
+  background: var(--color-slime);
+  --drip: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='30'%3E%3Cpath d='M0 0h320v4c-10 0-12 2-13 5s-2 5-5 5-4-2-5-5-3-5-10-5h-50c-8 0-9 3-10 9s-3 15-7 15-6-9-7-15-2-9-10-9h-60c-7 0-8 2-9 6s-2 7-5 7-4-3-5-7-2-6-9-6H70c-8 0-10 3-11 8s-3 11-6 11-5-6-6-11-3-8-11-8H0z'/%3E%3C/svg%3E");
+  -webkit-mask: var(--drip) repeat-x 0 0 / 320px 30px;
+  mask: var(--drip) repeat-x 0 0 / 320px 30px;
+}

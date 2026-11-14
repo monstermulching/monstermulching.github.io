@@ -1,0 +1,18 @@
+---
+import { business } from '../data/business';
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-line bg-bark">
+  <div class="wrap flex flex-col gap-6 py-10 text-sm text-moss sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <p class="font-display text-xl font-extrabold uppercase tracking-[0.06em] text-bone">Monster <span class="text-slime">Mulching</span></p>
+      <p class="mt-1">Skid site waste wood mulching · Lower North Island</p>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href={`tel:${business.phoneE164}`} class="hover:text-slime">{business.phone}</a>
+      <a href={`mailto:${business.email}`} class="hover:text-slime">{business.email}</a>
+      <a href="/privacy" class="hover:text-slime">Privacy</a>
+    </div>
+  </div>
+  <div class="wrap border-t border-line/60 py-5 text-xs text-moss/70">© {year} Monster Mulching. All rights reserved.</div>
+</footer>

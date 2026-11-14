@@ -1,0 +1,224 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Drips from '../components/Drips.astro';
+import { business } from '../data/business';
+import hero from '../assets/images/hero.jpg';
+import logo from '../assets/images/logo.png';
+import mulcher from '../assets/images/equipment/mulcher.png';
+import excavator from '../assets/images/equipment/excavator.png';
+import ute from '../assets/images/equipment/ute.png';
+
+const highlights = [
+  'Specialists in mulching skid site waste wood.',
+  'Reliable service for forestry crews, contractors, and landowners.',
+  'Modern equipment, practical advice, and straightforward communication.',
+];
+
+const services = [
+  {
+    title: 'Skid Site Waste Wood Mulching',
+    body: 'Efficient mulching of skid site waste wood to help keep forestry and work sites cleaner, safer, and easier to manage.',
+  },
+  {
+    title: 'Forestry & Site Clean-up',
+    body: 'Clearing waste wood and slash build-up so skid sites and worksites stay safe and workable.',
+  },
+  {
+    title: 'Volume Reduction',
+    body: 'Mulching bulky waste wood into a manageable, easier-to-move material, cutting pile size and handling.',
+  },
+];
+
+const equipment = [
+  { img: mulcher, title: 'Tracked mulcher', alt: 'Morbark tracked mulcher with Monster Mulching signage' },
+  { img: excavator, title: 'Excavator', alt: 'Monster Mulching excavator on a low loader' },
+  { img: ute, title: 'Service ute', alt: 'Monster Mulching service ute' },
+];
+
+const ticker = ['Skid site waste wood', 'Forestry & site clean-up', 'Volume reduction', 'Lower North Island'];
+---
+<Base
+  title="Monster Mulching | Skid Site Waste Wood Mulching | Lower North Island"
+  description="Monster Mulching — Specialists in mulching skid site waste wood for forestry and worksites across the Lower North Island."
+>
+  <!-- Hero -->
+  <section class="relative isolate overflow-hidden">
+    <Image
+      src={hero}
+      alt=""
+      width={2400}
+      widths={[640, 1024, 1600, 2400]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      quality={70}
+      class="absolute inset-0 -z-10 size-full object-cover"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/85 to-night/40"></div>
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-night to-transparent"></div>
+
+    <div class="wrap grid items-center gap-10 pb-20 pt-16 sm:pt-24 lg:grid-cols-[1.15fr_0.85fr] lg:pb-28">
+      <div>
+        <p class="kicker">Lower North Island · Forestry</p>
+        <h1 class="mt-4">Skid site waste wood <span class="text-slime">mulching</span></h1>
+        <p class="mt-6 max-w-[52ch] text-lg text-bone/85">
+          Specialists in mulching skid site waste wood across the Lower North Island.
+          We help forestry crews and contractors clear sites quickly, safely, and with less hassle.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={`tel:${business.phoneE164}`} class="btn btn-primary">Call {business.phone}</a>
+          <a href="#contact" class="btn btn-ghost">Get a quote</a>
+        </div>
+      </div>
+      <div class="hidden justify-center lg:flex">
+        <Image src={logo} alt="" width={520} densities={[1, 2]} loading="eager" class="w-full max-w-[520px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Slime band -->
+  <div aria-hidden="true">
+    <div class="bg-slime text-night">
+      <div class="wrap flex flex-wrap items-center justify-center gap-x-6 gap-y-1 py-3 font-display text-lg font-extrabold uppercase tracking-[0.12em] sm:justify-between">
+        {ticker.map((t, i) => (
+          <>
+            {i > 0 && <span class="hidden opacity-50 sm:inline">✦</span>}
+            <span>{t}</span>
+          </>
+        ))}
+      </div>
+    </div>
+    <Drips />
+  </div>
+
+  <!-- Why us -->
+  <section class="wrap pt-10 sm:pt-14" aria-labelledby="why-heading">
+    <h2 id="why-heading" class="sr-only">Why choose Monster Mulching</h2>
+    <ul class="grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-3">
+      {highlights.map((h) => (
+        <li class="flex gap-3 bg-bark p-6">
+          <svg class="mt-1 size-5 shrink-0 text-slime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+          <span class="text-bone/90">{h}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div>
+          <p class="kicker">What we do</p>
+          <h2 class="mt-3">Services</h2>
+        </div>
+        <p class="max-w-[56ch] text-moss lg:justify-self-end">We help keep sites tidy, manageable, and moving with practical, dependable waste wood mulching.</p>
+      </div>
+
+      <ol class="mt-12 border-t border-line">
+        {services.map((s, i) => (
+          <li class="group grid gap-3 border-b border-line py-8 sm:grid-cols-[6rem_1fr] md:grid-cols-[8rem_0.8fr_1.2fr] md:items-baseline md:gap-8">
+            <span class="font-display text-5xl font-extrabold text-slime/30 transition-colors group-hover:text-slime md:text-6xl">0{i + 1}</span>
+            <h3>{s.title}</h3>
+            <p class="text-moss sm:col-start-2 md:col-start-auto">{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Equipment -->
+  <section id="equipment" class="section pt-0">
+    <div class="wrap">
+      <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div>
+          <p class="kicker">The fleet</p>
+          <h2 class="mt-3">Our equipment</h2>
+        </div>
+        <p class="max-w-[56ch] text-moss lg:justify-self-end">Purpose-built machinery for processing waste wood on site.</p>
+      </div>
+      <ul class="mt-12 grid gap-5 md:grid-cols-3">
+        {equipment.map((e) => (
+          <li class="group overflow-hidden rounded-md border border-line bg-bark">
+            <div class="flex aspect-[4/3] items-end justify-center bg-[radial-gradient(ellipse_at_center_bottom,rgba(127,224,74,0.14),transparent_70%)] p-6">
+              <Image src={e.img} alt={e.alt} width={420} densities={[1, 2]} class="max-h-full w-auto object-contain transition-transform duration-300 group-hover:-translate-y-1" />
+            </div>
+            <h3 class="border-t border-line px-6 py-4 text-xl">{e.title}</h3>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section border-y border-line bg-bark">
+    <div class="wrap grid gap-12 lg:grid-cols-2">
+      <div>
+        <p class="kicker">About</p>
+        <h2 class="mt-3">Big machines.<br /><span class="text-slime">Tidy sites.</span></h2>
+        <div class="prose-mm mt-2 max-w-[56ch]">
+          <p>
+            Monster Mulching provides specialist skid site waste wood mulching across the Lower North Island.
+            We focus on practical outcomes, efficient turnaround, and dependable service for a wide range of site and property needs.
+          </p>
+        </div>
+      </div>
+      <div class="rounded-md border border-line bg-night p-8 sm:p-10">
+        <h3>Why customers call us</h3>
+        <div class="prose-mm">
+          <p>
+            We keep things simple: clear communication, reliable equipment, and work that helps customers move forward.
+            Whether it is a single skid site or an ongoing clean-up, we aim to make the job easier from start to finish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="wrap grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+      <div>
+        <p class="kicker">Contact</p>
+        <h2 class="mt-3">Got a job for the monster?</h2>
+        <p class="mt-4 text-moss">Use the form or contact us directly.</p>
+
+        <dl class="mt-8 grid gap-6">
+          <div>
+            <dt class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">Phone</dt>
+            <dd><a href={`tel:${business.phoneE164}`} class="font-display text-4xl font-extrabold text-bone hover:text-slime">{business.phone}</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">Email</dt>
+            <dd><a href={`mailto:${business.email}`} class="text-lg text-bone underline decoration-slime decoration-2 underline-offset-4 hover:text-slime">{business.email}</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">Location</dt>
+            <dd class="text-lg text-bone">{business.region}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form action="https://api.web3forms.com/submit" method="POST" class="grid gap-5 rounded-md border border-line bg-bark p-6 sm:p-8">
+        <input type="hidden" name="access_key" value={business.web3formsKey} />
+        <input type="hidden" name="subject" value="Monster Mulching Website Enquiry" />
+        <input type="hidden" name="from_name" value="Monster Mulching Website" />
+        <input type="hidden" name="redirect" value="https://monstermulching.nz/thank-you.html" />
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <label class="field">Name<input type="text" name="name" placeholder="Your name" autocomplete="name" required /></label>
+          <label class="field">Phone (optional)<input type="tel" name="phone" placeholder="Your phone number" autocomplete="tel" /></label>
+        </div>
+        <label class="field">Email<input type="email" name="email" placeholder="you@example.com" autocomplete="email" required /></label>
+        <label class="field">Message<textarea name="message" rows="6" placeholder="How can we help?" required></textarea></label>
+
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p class="text-sm text-moss">See our <a href="/privacy" class="underline hover:text-slime">privacy statement</a>.</p>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</Base>
