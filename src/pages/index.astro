@@ -36,6 +36,8 @@ const equipment = [
   { img: ute, title: 'Service ute', alt: 'Monster Mulching service ute' },
 ];
 
+const formKey = import.meta.env.PUBLIC_WEB3FORMS_KEY; // .env locally, GitHub repo variable in CI
+
 const ticker = ['Skid site waste wood', 'Forestry & site clean-up', 'Volume reduction', 'Lower North Island'];
 ---
 <Base
@@ -197,7 +199,7 @@ const ticker = ['Skid site waste wood', 'Forestry & site clean-up', 'Volume redu
       </div>
 
       <form action="https://api.web3forms.com/submit" method="POST" class="grid gap-5 rounded-md border border-line bg-bark p-6 sm:p-8">
-        <input type="hidden" name="access_key" value={business.web3formsKey} />
+        <input type="hidden" name="access_key" value={formKey ?? ''} />
         <input type="hidden" name="subject" value="Monster Mulching Website Enquiry" />
         <input type="hidden" name="from_name" value="Monster Mulching Website" />
         <input type="hidden" name="redirect" value="https://monstermulching.nz/thank-you.html" />
