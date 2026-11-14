@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { business } from '../data/business';
+---
+<Base title="Privacy - Monster Mulching" description="Privacy policy for Monster Mulching website.">
+  <PageIntro kicker="Monster Mulching" title="Privacy" />
+  <section class="section pt-10">
+    <div class="wrap prose-mm max-w-[68ch] text-lg">
+      <p>{business.legalName} (NZBN {business.nzbn}, “we”, “us”) operates this website. We respect your privacy and handle personal information in accordance with the Privacy Act 2020 (New Zealand).</p>
+      <p>If you contact us through this website, we may collect personal information such as your name, email address, phone number, and the contents of your message. We use this information only to respond to your enquiry or provide our services.</p>
+      <p>This website may also collect anonymous usage information (such as pages visited and general location) through analytics tools to help us understand how the website is used and improve it.</p>
+      <p>We do not sell or share personal information with third parties for marketing purposes.</p>
+      <p>You have the right to request access to or correction of any personal information we hold about you. If you have any questions about this privacy statement, please <a href="/#contact" class="text-bone underline decoration-slime decoration-2 underline-offset-4 hover:text-slime">contact us</a>.</p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+---
+<Base title="Page not found - Monster Mulching" description="This page could not be found." noindex>
+  <PageIntro kicker="404" title="Mulched it." />
+  <section class="section pt-10">
+    <div class="wrap max-w-[68ch]">
+      <p class="text-lg text-moss">Looks like this page went through the grinder. Head back home and try again.</p>
+      <a href="/" class="btn btn-primary mt-8">Return to home</a>
+    </div>
+  </section>
+</Base>

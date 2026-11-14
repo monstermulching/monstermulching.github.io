@@ -1,1 +1,10 @@
+node_modules/
+dist/
+.astro/
 .DS_Store
+
+# local only
+.env
+.env.*
+!.env.example
+.claude/
